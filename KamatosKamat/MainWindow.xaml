@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="26*"/>
+            <ColumnDefinition Width="681*"/>
+            <ColumnDefinition Width="93*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="171*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Deposit Amount" HorizontalAlignment="Left" Margin="41,92,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Column="3" Height="26" Width="97"/>
+        <Label Content="Interestrate" HorizontalAlignment="Left" Margin="51,108,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="3" Height="26" Width="71"/>
+        <TextBox x:Name="tb_deposit" Grid.Column="3" HorizontalAlignment="Left" Margin="51,43,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="tb_interestrate" Grid.Column="3" HorizontalAlignment="Left" Margin="60,149,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18"/>
+        <Button Grid.Column="3" Content="Count" HorizontalAlignment="Left" Margin="101,244,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click" Height="20" Width="36"/>
+        <ListBox  x:Name="lb" Grid.Column="3" Grid.Row="1" Margin="242,43,230,93" SelectionChanged="lb_SelectionChanged"/>
+        <Label Grid.Column="3" Content="Monthly" HorizontalAlignment="Left" Margin="516,26,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label  x:Name="lb_output" Grid.Column="3" Content="" HorizontalAlignment="Left" Margin="524,57,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.053,-0.5"/>
     </Grid>
 </Window>

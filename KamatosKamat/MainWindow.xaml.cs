@@ -24,5 +24,27 @@ namespace KamatosKamat
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int deposit_amount = int.Parse(tb_deposit.Text);
+            double interest_rate = double.Parse(tb_interestrate.Text);
+
+            // (1 + p / 100 ) ^ n          
+
+            for (int i = 0; i < 51; i++)
+            {
+                double test = deposit_amount * Math.Pow((1 + interest_rate / 100), i);
+
+                var output = new Output(i, test);
+                lb.Items.Add(output);
+            }
+        }
+
+        private void lb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selected = lb.SelectedItem as Output;
+            lb_output.Content = "$" + Math.Round(selected.Test / ( selected.I * 12 ),2);
+        }
     }
 }
